@@ -8,9 +8,9 @@ function getRandomIntInRange(left, right){
   return left + Math.floor(Math.random() * (right - left + 1));
 }
 
-function isStrinLengthPermitted(string, maxLength){
+function isStringLengthPermitted(string, maxLength){
   return string.length <= maxLength;
 }
 getRandomIntInRange(9,3);
-isStrinLengthPermitted('abcdef', 8);
+isStringLengthPermitted('abcdef', 8);
 
