@@ -21,7 +21,7 @@ const createRandomComments = () => Array.from({length: faker.datatype.number({mi
 
 const photos = Array.from({length: 25}).map((value,index) => ({
   id: index + 1,
-  url: `photos/${index}.jpg`,
+  url: `photos/${index + 1}.jpg`,
   description: faker.lorem.sentences(faker.datatype.number({min: 0, max: 10})),
   likes: faker.datatype.number({min: 15, max: 200}),
   comments: createRandomComments(),
