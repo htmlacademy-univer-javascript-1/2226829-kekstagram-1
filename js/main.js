@@ -1,16 +1,31 @@
-function getRandomIntInRange(left, right){
-  if (left < 0 || right < 0){
-    return;
-  }
-  if (left > right) {
-    [left, right] = [right, left];
-  }
-  return left + Math.floor(Math.random() * (right - left + 1));
-}
+import { faker } from '@faker-js/faker';
 
-function isStringLengthPermitted(string, maxLength){
-  return string.length <= maxLength;
-}
-getRandomIntInRange(9,3);
-isStringLengthPermitted('abcdef', 8);
+const MESSAGES = [
+  'Всё отлично!',
+  'В целом всё неплохо. Но не всё.',
+  'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
+  'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше.',
+  'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
+  'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
+];
 
+let commentInd = 1;
+const createRandomComments = () => Array.from({length: faker.datatype.number({min: 0, max: 10})}).map(() => ({
+  id: commentInd++,
+  avatar: `img/avatar-${faker.datatype.number({min: 1, max: 6})}.svg`,
+  message : Math.random() >= 0.5 ? MESSAGES[faker.datatype.number({min: 0, max: MESSAGES.length-1})] :
+    `${MESSAGES[faker.datatype.number({min: 0, max: MESSAGES.length-1})]} ${MESSAGES[faker.datatype.number({min: 0, max: MESSAGES.length-1})]}`,
+  name: faker.name.firstName(),
+}));
+
+
+const photos = Array.from({length: 25}).map((value,index) => ({
+  id: index + 1,
+  url: `photos/${index}.jpg`,
+  description: faker.lorem.sentences(faker.datatype.number({min: 0, max: 10})),
+  likes: faker.datatype.number({min: 15, max: 200}),
+  comments: createRandomComments(),
+}));
+
+// eslint-disable-next-line no-console
+console.log(photos);
