@@ -1,4 +1,4 @@
-import {faker} from '@faker-js/faker';
+import { faker } from 'https://cdn.skypack.dev/@faker-js/faker';
 
 let commentInd = 1;
 const createRandomComments = (messages) => Array.from({length: faker.datatype.number({min: 0, max: 10})}).map(() => ({
