@@ -10,6 +10,3 @@ const MESSAGES = [
 ];
 
 export const photos = createPhotos(MESSAGES);
-
-// eslint-disable-next-line no-console
-console.log(photos);
