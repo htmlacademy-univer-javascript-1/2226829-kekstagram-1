@@ -1,5 +1,7 @@
 import { faker } from 'https://cdn.skypack.dev/@faker-js/faker';
 
+const ESCAPE_KEY = 'Escape';
+
 let commentInd = 1;
 const createRandomComments = (messages) => Array.from({length: faker.datatype.number({min: 0, max: 10})}).map(() => ({
   id: commentInd++,
@@ -9,6 +11,7 @@ const createRandomComments = (messages) => Array.from({length: faker.datatype.nu
   name: faker.name.firstName(),
 }));
 
+export const isKeyEsc = (keyCode) => keyCode === ESCAPE_KEY;
 
 export const createPhotos = (messages) => Array.from({length: 25}).map((value, index) => ({
   id: index + 1,
