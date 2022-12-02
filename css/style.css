@@ -26,6 +26,13 @@
           box-sizing: border-box;
 }
 
+.has-danger input {
+  border-color: red;
+}
+.has-success input {
+  border-color: lawngreen;
+}
+
 body {
   font-family: "Open Sans", "Arial", sans-serif;
   font-weight: 400;

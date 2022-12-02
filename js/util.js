@@ -20,6 +20,3 @@ export const createPhotos = (messages) => Array.from({length: 25}).map((value, i
   likes: faker.datatype.number({min: 15, max: 200}),
   comments: createRandomComments(messages),
 }));
-
-// eslint-disable-next-line no-console
-console.log(createPhotos);
