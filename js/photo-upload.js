@@ -59,7 +59,7 @@ pristine.addValidator(
 pristine.addValidator(
   textHashtags,
   checkHashtagUniqueness,
-  'Хэш-теги должны быть уникальны'
+  'Хэш-теги должны быть уникальными'
 );
 
 pristine.addValidator(
