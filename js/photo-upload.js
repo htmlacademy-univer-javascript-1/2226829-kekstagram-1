@@ -1,4 +1,5 @@
 import {isKeyEsc} from './util.js';
+import {renderSlider} from './photo-effect.js';
 
 const MAX_HASHTAGS_COUNT = 5;
 const MAX_HASHTAG_LENGTH = 20;
@@ -10,6 +11,10 @@ const photoUploadForm = document.querySelector('.img-upload__form');
 const textHashtags = photoUploadForm.querySelector('.text__hashtags');
 const textDescription = photoUploadForm.querySelector('.text__description');
 const buttonCancelElement = photoUploadForm.querySelector('.img-upload__cancel');
+
+
+
+renderSlider();
 
 const hashtagRegex = new RegExp('^#[0-9A-Za-zА-Яа-яЁё]{1,19}$');
 function isHashtagValid(element) {
