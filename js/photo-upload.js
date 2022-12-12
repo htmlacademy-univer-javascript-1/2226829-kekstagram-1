@@ -12,8 +12,6 @@ const textHashtags = photoUploadForm.querySelector('.text__hashtags');
 const textDescription = photoUploadForm.querySelector('.text__description');
 const buttonCancelElement = photoUploadForm.querySelector('.img-upload__cancel');
 
-
-
 renderSlider();
 
 const hashtagRegex = new RegExp('^#[0-9A-Za-zА-Яа-яЁё]{1,19}$');

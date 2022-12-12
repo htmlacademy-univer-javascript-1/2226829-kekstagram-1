@@ -1,4 +1,5 @@
 import {EFFECTS,EFFECT_OPTIONS} from './data.js';
+import {renderScale} from './scale.js';
 
 const DEFAULT_EFFECT = 'none';
 
@@ -10,8 +11,10 @@ const effectsInputs = document.querySelectorAll('.effects__radio');
 const effectLevel = document.querySelector('.img-upload__effect-level');
 
 export const renderSlider = () => {
+  renderScale();
   effectLevel.classList.add('hidden');
-  let activeFilter = 'none';
+  let activeFilter = DEFAULT_EFFECT;
+  photoPreview.classList.remove();
 
   noUiSlider.create(
     sliderElement, {
