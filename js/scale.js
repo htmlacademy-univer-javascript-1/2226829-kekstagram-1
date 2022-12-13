@@ -9,10 +9,7 @@ const MAX_SIZE = 100;
 const DEFAULT_SIZE = 50;
 const STEP = 25;
 
-export const renderScale = () => {
-  photoPreview.style = `transform: scale(${  DEFAULT_SIZE / 100  })`;
-  sizeNumber.value = `${DEFAULT_SIZE}%`;
-
+const renderScale = () => {
   sizePlus.addEventListener('click', () => {
     let value;
     if (sizeNumber.value.length > 3) {
@@ -22,7 +19,7 @@ export const renderScale = () => {
     }
     if (value < MAX_SIZE) {
       value += STEP;
-      photoPreview.style = `transform: scale(${value / 100})`;
+      photoPreview.style.transform = `scale(${value / 100})`;
       sizeNumber.value = `${value}%`;
     }
   });
@@ -36,8 +33,15 @@ export const renderScale = () => {
     }
     if (value > MIN_SIZE) {
       value -= STEP;
-      photoPreview.style = `transform: scale(${value / 100})`;
+      photoPreview.style.transform = `scale(${value / 100})`;
       sizeNumber.value = `${value}%`;
     }
   });
 };
+
+const resetScale = () => {
+  photoPreview.style.transform = `scale(${DEFAULT_SIZE / 100})`;
+  sizeNumber.value = `${DEFAULT_SIZE}%`;
+};
+
+export {renderScale,resetScale};

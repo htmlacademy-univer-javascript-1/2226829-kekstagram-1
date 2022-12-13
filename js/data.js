@@ -12,7 +12,7 @@ const MESSAGES = [
 const photos = createPhotos(MESSAGES);
 
 const EFFECTS = [
-  'None', 'effects__preview--sepia', 'effects__preview--marvin',
+  'none', 'effects__preview--sepia', 'effects__preview--marvin',
   'effects__preview--phobos', 'effects__preview--heat', 'effects__preview--chrome',
 ];
 

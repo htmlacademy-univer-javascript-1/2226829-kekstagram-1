@@ -30,7 +30,6 @@ const onPhotoModalClick = (evt) => {
 export const renderPhotos = () =>{
   photos.forEach(appendPhoto);
   photoListElement.appendChild(photoFragment);
-
   photoListElement.addEventListener('click',onPhotoModalClick);
 };
 
