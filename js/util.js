@@ -11,12 +11,22 @@ const createRandomComments = (messages) => Array.from({length: faker.datatype.nu
   name: faker.name.firstName(),
 }));
 
-export const isKeyEsc = (keyCode) => keyCode === ESCAPE_KEY;
+const isKeyEsc = (keyCode) => keyCode === ESCAPE_KEY;
 
-export const createPhotos = (messages) => Array.from({length: 25}).map((value, index) => ({
+const createPhotos = (messages) => Array.from({length: 25}).map((value, index) => ({
   id: index + 1,
   url: `photos/${index + 1}.jpg`,
   description: faker.lorem.sentences(faker.datatype.number({min: 0, max: 10})),
   likes: faker.datatype.number({min: 15, max: 200}),
   comments: createRandomComments(messages),
 }));
+
+const errorPhotos = Array.from({length:25}).map((value, index) => ({
+  id: index + 1,
+  url: 'photos/error.jpg',
+  description: 'Ошибка загрузки фотографии',
+  likes: '-',
+  comments: []
+}));
+
+export {isKeyEsc,createPhotos,errorPhotos};
