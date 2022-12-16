@@ -37,8 +37,8 @@ const checkHashtagUniqueness = (hashtags) => {
 const checkComment = (comment) => comment.length <= MAX_COMMENT_LENGTH;
 
 const dropValues = () => {
-  textHashtags.textContent = '';
-  textDescription.textContent = '';
+  textHashtags.value = '';
+  textDescription.value = '';
 };
 
 const pristine = new Pristine(photoUploadForm, {
