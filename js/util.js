@@ -22,7 +22,6 @@ const getRandomUniquePhotos = (photos, n) => {
     result[n] = photos[x in taken ? taken[x] : x];
     taken[x] = --len in taken ? taken[len] : len;
   }
-  console.log(result);
   return result;
 };
 
