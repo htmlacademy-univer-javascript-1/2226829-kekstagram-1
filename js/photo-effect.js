@@ -12,6 +12,7 @@ const effectLevel = document.querySelector('.img-upload__effect-level');
 let chosenEffect = DEFAULT_EFFECT;
 
 const updateSlider = () => {
+  photoPreview.classList.value = 'img-upload__preview';
   photoPreview.classList.add(`effects_preview--${chosenEffect}`);
   photoPreview.style.filter = DEFAULT_EFFECT;
   effectLevelValue.value = parseFloat(sliderElement.noUiSlider.get()).toFixed(1);

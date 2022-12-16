@@ -7,6 +7,7 @@ const photoTemplate = document.querySelector('#picture').content
   .querySelector('.picture');
 const photoFragment = document.createDocumentFragment();
 const filterButtons = document.querySelectorAll('.img-filters__button');
+const imgFilters = document.querySelector('.img-filters');
 let loadedPhotos;
 
 const appendPhoto = (photo) => {
@@ -47,6 +48,7 @@ const renderPhotos = (photos,option) =>{
 
 const debounceRenderedPhotos = debounce(renderPhotos, 500);
 const createEventListenersFilter = () => {
+  imgFilters.classList.remove('img-filters--inactive');
   filterButtons.forEach((filterButton) => {
     filterButton.addEventListener('click', () => {
       filterButtons.forEach((button) =>
