@@ -40,7 +40,7 @@ export const uploadFile = () => {
   fileUploadButton.addEventListener('change', (evt) => {
     evt.preventDefault();
     onImgInputChange(evt);
-    document.body.classList.remove('modal-open');
+    document.body.classList.add('modal-open');
     document.addEventListener('keydown',onEscKeydown);
     buttonCancelElement.addEventListener('click',closeOverlay);
     overlay.classList.remove('hidden');
