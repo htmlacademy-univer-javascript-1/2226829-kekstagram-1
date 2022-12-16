@@ -36,6 +36,10 @@ const checkHashtagUniqueness = (hashtags) => {
 
 const checkComment = (comment) => comment.length <= MAX_COMMENT_LENGTH;
 
+const dropValues = () => {
+  textHashtags.textContent = '';
+  textDescription.textContent = '';
+};
 
 const pristine = new Pristine(photoUploadForm, {
   classTo: 'img-upload__field-wrapper',
@@ -72,4 +76,4 @@ pristine.addValidator(
 );
 
 
-export {pristine};
+export {pristine,dropValues};
